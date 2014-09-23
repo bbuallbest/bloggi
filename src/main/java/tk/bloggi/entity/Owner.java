@@ -1,4 +1,4 @@
-package tk.bloggi.persistence.entity;
+package tk.bloggi.entity;
 
 import javax.persistence.*;
 

@@ -1,7 +1,7 @@
 package tk.bloggi.dao;
 
 import org.hibernate.Session;
-import tk.bloggi.persistence.entity.Owner;
+import tk.bloggi.entity.Owner;
 
 /**
  * Created by happy on 21/09/2014.

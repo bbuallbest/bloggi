@@ -1,12 +1,11 @@
 package tk.bloggi.controller;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.w3c.dom.Attr;
 import tk.bloggi.dao.OwnerDAO;
-import tk.bloggi.persistence.entity.Owner;
+import tk.bloggi.entity.Owner;
 import tk.bloggi.util.Attribute;
+import tk.bloggi.util.HibernateSessionContextHolder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,15 +26,15 @@ public class AddOwnerController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         boolean trState = true, sessionState = true;
 
-        SessionFactory sessionFactory = (SessionFactory)req.getServletContext().getAttribute(Attribute.SESSION_FACTORY.getAttributeName());
-        Session session = sessionFactory.getCurrentSession();
+        Session session = HibernateSessionContextHolder.getSession();
+
         Transaction tr = null;
         if(session != null) {
             tr = session.beginTransaction();
             trState = false;
 
             OwnerDAO ownerDAO = new OwnerDAO(session);
-            ownerDAO.save(new Owner("aa@aa.aa", "aa"));
+            ownerDAO.save(new Owner("ccc@ccc.ccc", "ccc"));
         }
 
         if(tr != null) {
@@ -43,7 +42,6 @@ public class AddOwnerController extends HttpServlet{
             sessionState = false;
         }
 
-        resp.setContentType("text/html");
         PrintWriter pw = resp.getWriter();
         pw.println("<html><head></head><body>");
         pw.println("<h1>Is session null?</h1>");
@@ -52,8 +50,24 @@ public class AddOwnerController extends HttpServlet{
         pw.println("<h1>Is transaction null?</h1>");
         pw.println("<h4>" + trState + "</h4>");
         pw.println("<br/>");
-        pw.println("Session = " + session.getClass().toString());
+
+        Session s = (Session)req.getServletContext().getAttribute(Attribute.SESSION.name());
+        if(s != null) {
+            pw.println("<b>prev.session == curr.session : " + (session == s) + "</b>");
+        }
+        else
+            pw.println("<b>prev.session is NULL</b>");
+        pw.println("<br/>");
+        pw.println("<b>session = " + session + "</b>");
+        pw.println("<br/>");
+        pw.println("<b>session.getClass() = " + session.getClass() + "</b>");
+        pw.println("<br/>");
+        pw.println("<b>session.getClass().getClass() = " + session.getClass().getClass() + "</b>");
         pw.println("</body></html>");
+
+        req.getServletContext().setAttribute(Attribute.SESSION.name(), session);
+
+        resp.setContentType("text/html");
 
     }
 }
