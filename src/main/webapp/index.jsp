@@ -68,7 +68,7 @@
     <div class="headline">
         <div class="container">
             <h1>Welcome To Bloggi</h1>
-            <h2>Read And Write Your Own Stories</h2>
+            <h2>Create Your Own Personal Blog</h2>
         </div>
     </div>
 </header>
@@ -80,7 +80,7 @@
 
     <!-- First Featurette -->
     <div class="featurette">
-        <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+        <img class="featurette-image img-circle img-responsive pull-right" src="/static/img/index/about.png">
         <h2 class="featurette-heading">This First Heading
             <span class="text-muted">Will Catch Your Eye</span>
         </h2>
@@ -91,7 +91,7 @@
 
     <!-- Second Featurette -->
     <div class="featurette">
-        <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+        <img class="featurette-image img-circle img-responsive pull-left" src="/static/img/index/services.png">
         <h2 class="featurette-heading">The Second Heading
             <span class="text-muted">Is Pretty Cool Too.</span>
         </h2>
@@ -102,7 +102,7 @@
 
     <!-- Third Featurette -->
     <div class="featurette">
-        <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+        <img class="featurette-image img-circle img-responsive pull-right" src="/static/img/index/contacts.png">
         <h2 class="featurette-heading">The Third Heading
             <span class="text-muted">Will Seal the Deal.</span>
         </h2>
