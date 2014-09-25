@@ -1,9 +1,9 @@
-package tk.bloggi.listener; /**
+package ba.bloggi.listener; /**
  * Created by happy on 23/09/2014.
  */
 
 import org.hibernate.SessionFactory;
-import tk.bloggi.util.HibernateUtil;
+import ba.bloggi.util.HibernateUtil;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

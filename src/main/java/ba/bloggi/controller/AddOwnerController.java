@@ -1,11 +1,11 @@
-package tk.bloggi.controller;
+package ba.bloggi.controller;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import tk.bloggi.dao.OwnerDAO;
-import tk.bloggi.entity.Owner;
-import tk.bloggi.util.Attribute;
-import tk.bloggi.util.HibernateSessionContextHolder;
+import ba.bloggi.dao.OwnerDAO;
+import ba.bloggi.entity.Owner;
+import ba.bloggi.util.Attribute;
+import ba.bloggi.util.HibernateSessionContextHolder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -8,6 +8,12 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!--<property name="connection.url">jdbc:mysql://127.4.77.2:3306/bloggi</property>-->
+        <!--<property name="connection.username">admin4FnYCR1</property>-->
+        <!--<property name="connection.password">k5_7D-VautH2</property>-->
+
+        <!-- For local connection -->
         <property name="connection.url">jdbc:mysql://localhost:3306/bloggi</property>
         <property name="connection.username">bloggi_admin</property>
         <property name="connection.password">bloggi_password</property>
@@ -29,7 +35,7 @@
 
         <property name="hbm2ddl.auto">validate</property>
 
-        <mapping class="tk.bloggi.entity.Owner"/>
+        <mapping class="ba.bloggi.entity.Owner"/>
     </session-factory>
 
 </hibernate-configuration>

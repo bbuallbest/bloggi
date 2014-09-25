@@ -1,4 +1,4 @@
-package tk.bloggi.util;
+package ba.bloggi.util;
 
 /**
  * Created by happy on 21/09/2014.

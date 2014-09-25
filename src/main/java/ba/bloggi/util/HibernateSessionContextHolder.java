@@ -1,4 +1,4 @@
-package tk.bloggi.util;
+package ba.bloggi.util;
 
 import org.hibernate.Session;
 
