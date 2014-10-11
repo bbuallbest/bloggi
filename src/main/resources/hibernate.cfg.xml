@@ -33,9 +33,12 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">create</property>
 
-        <mapping class="ba.bloggi.entity.Owner"/>
+        <mapping class="ba.bloggi.entity.Comment"/>
+        <mapping class="ba.bloggi.entity.User"/>
+        <mapping class="ba.bloggi.entity.Post"/>
+        <mapping class="ba.bloggi.entity.TestEntity"/>
     </session-factory>
 
 </hibernate-configuration>

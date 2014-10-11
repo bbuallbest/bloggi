@@ -1,4 +1,5 @@
-bloggi
+Bloggi
 ======
 
-simple blog engine
+Simple blog engine
+------------------

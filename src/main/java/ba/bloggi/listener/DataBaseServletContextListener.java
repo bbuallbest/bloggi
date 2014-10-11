@@ -10,7 +10,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 @WebListener
-public class HibernateListener implements ServletContextListener {
+public class DataBaseServletContextListener implements ServletContextListener {
 
     private SessionFactory sessionFactory;
 

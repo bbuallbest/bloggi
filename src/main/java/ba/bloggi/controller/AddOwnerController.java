@@ -1,11 +1,11 @@
 package ba.bloggi.controller;
 
+import ba.bloggi.dao.impl.UserDAOImpl;
+import ba.bloggi.entity.User;
+import ba.bloggi.util.DataBaseContextHolder;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import ba.bloggi.dao.OwnerDAO;
-import ba.bloggi.entity.Owner;
-import ba.bloggi.util.Attribute;
-import ba.bloggi.util.HibernateSessionContextHolder;
+//import ba.bloggi.util.Attribute;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,15 +26,15 @@ public class AddOwnerController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         boolean trState = true, sessionState = true;
 
-        Session session = HibernateSessionContextHolder.getSession();
+        Session session = DataBaseContextHolder.getSession();
 
         Transaction tr = null;
         if(session != null) {
             tr = session.beginTransaction();
             trState = false;
 
-            OwnerDAO ownerDAO = new OwnerDAO(session);
-            ownerDAO.save(new Owner("ccc@ccc.ccc", "ccc"));
+            UserDAOImpl ownerDAO = new UserDAOImpl(session);
+//            ownerDAO.save(new User("ccc@ccc.ccc", "ccc"));
         }
 
         if(tr != null) {
@@ -51,11 +51,11 @@ public class AddOwnerController extends HttpServlet{
         pw.println("<h4>" + trState + "</h4>");
         pw.println("<br/>");
 
-        Session s = (Session)req.getServletContext().getAttribute(Attribute.SESSION.name());
-        if(s != null) {
-            pw.println("<b>prev.session == curr.session : " + (session == s) + "</b>");
-        }
-        else
+//        Session s = (Session)req.getServletContext().getAttribute(Attribute.SESSION.name());
+//        if(s != null) {
+//            pw.println("<b>prev.session == curr.session : " + (session == s) + "</b>");
+//        }
+//        else
             pw.println("<b>prev.session is NULL</b>");
         pw.println("<br/>");
         pw.println("<b>session = " + session + "</b>");
@@ -65,7 +65,7 @@ public class AddOwnerController extends HttpServlet{
         pw.println("<b>session.getClass().getClass() = " + session.getClass().getClass() + "</b>");
         pw.println("</body></html>");
 
-        req.getServletContext().setAttribute(Attribute.SESSION.name(), session);
+//        req.getServletContext().setAttribute(Attribute.SESSION.name(), session);
 
         resp.setContentType("text/html");
 
