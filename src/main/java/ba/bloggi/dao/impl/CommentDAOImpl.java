@@ -14,13 +14,15 @@ public class CommentDAOImpl implements CommentDAO {
 
     private Session session;
 
+    public CommentDAOImpl() {}
+
     public CommentDAOImpl(Session session) {
         this.session = session;
     }
 
     @Override
-    public Long save(Comment value) {
-        return (Long) session.save(value);
+    public Serializable save(Comment value) {
+        return (Serializable) session.save(value);
     }
 
     @Override

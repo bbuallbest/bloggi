@@ -21,8 +21,8 @@ public class UserDAOImpl implements UserDAO {
         this.session = session;
     }
 
-    public Long save(User user) {
-        return (Long)session.save(user);
+    public Serializable save(User user) {
+        return (Serializable)session.save(user);
     }
 
     @Override

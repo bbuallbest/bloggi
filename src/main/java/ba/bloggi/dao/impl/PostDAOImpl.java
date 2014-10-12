@@ -21,8 +21,8 @@ public class PostDAOImpl implements PostDAO{
     }
 
     @Override
-    public Long save(Post post) {
-        return (Long) session.save(post);
+    public Serializable save(Post post) {
+        return (Serializable) session.save(post);
     }
 
     @Override

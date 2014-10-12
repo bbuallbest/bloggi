@@ -14,7 +14,7 @@
     <link href="/static/lib/bootstrap/flatly-theme/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/static/css/sign/signin.css" rel="stylesheet">
+    <link href="/static/css/sign/signup.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><!--<script src="../../assets/js/ie8-responsive-file-warning.js"></script>--><![endif]-->
@@ -29,14 +29,18 @@
 <body>
 <div class="container">
 
-    <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <!--<label class="checkbox">-->
-        <input type="checkbox" value="remember-me"> Remember me
-        <!--</label>-->
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <form class="form-signup" role="form">
+        <h2 class="form-signup-heading">Sign up</h2>
+        <!--<h4 class="form-signin-low-heading">Username</h4>-->
+        <input id="inpt-username" type="text" class="form-control" placeholder="Username" required autofocus>
+        <!--<h4 class="form-signin-low-heading">Email</h4>-->
+        <input id="inpt-email" type="email" class="form-control" placeholder="Email address" required autofocus>
+        <!--<h4 class="form-signin-low-heading">Password</h4>-->
+        <input id="inpt-pass" type="password" class="form-control" placeholder="Password" required>
+        <!--<h4 class="form-signin-low-heading">Confirmation password</h4>-->
+        <input id="inpt-confirm-pass" type="password" class="form-control" placeholder="Confirmation password" required>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
 
 </div> <!-- /container -->
