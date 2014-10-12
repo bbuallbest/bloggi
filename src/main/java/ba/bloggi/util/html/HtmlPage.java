@@ -6,7 +6,8 @@ package ba.bloggi.util.html;
 public enum HtmlPage {
     SIGNIN("/static/html/sign/signin.html", "/signin"),
     SIGNUP("/static/html/sign/signup.html", "/signup"),
-    PERSONAL("/static/html/personal/personal.html", "/blog");
+    BLOG_INDEX("/static/html/blog/blog-index.html", "/blog"),
+    BLOG_POST("/static/html/blog/blog-post.html", "/post");
 
     private String path;
     private String uri;
