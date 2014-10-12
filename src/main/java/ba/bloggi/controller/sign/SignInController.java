@@ -12,7 +12,7 @@ import java.io.IOException;
  * Created by happy on 11/10/2014.
  */
 
-@WebServlet(urlPatterns = "/signinon")
+@WebServlet(urlPatterns = "/rest/signin")
 public class SignInController extends HttpServlet {
 
     @Override

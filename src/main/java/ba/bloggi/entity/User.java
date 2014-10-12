@@ -22,7 +22,12 @@ public class User extends GeneralEntity {
     @OneToMany(mappedBy = "commentAuthor", cascade = CascadeType.ALL)
     private List<Comment> comments = new LinkedList<>();
 
+    @Column(nullable = true)
+    private String username;
+
+    @Column(nullable = true)
     private String email;
+
     private String password;
 
     public User() {}
@@ -41,6 +46,14 @@ public class User extends GeneralEntity {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {

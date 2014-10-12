@@ -2,9 +2,9 @@ package ba.bloggi.dao.impl;
 
 import ba.bloggi.dao.UserDAO;
 import ba.bloggi.entity.User;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
-import javax.naming.OperationNotSupportedException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -12,6 +12,9 @@ import java.util.List;
  * Created by happy on 21/09/2014.
  */
 public class UserDAOImpl implements UserDAO {
+
+    private static final String SELECT_USER_BY_USERNAME = "FROM User u WHERE u.username = :username";
+    private static final String SELECT_USER_BY_EMAIL = "FROM User u WHERE u.email = :email";
 
     private Session session;
 
@@ -47,7 +50,18 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User findByEmail(String email) {
-        throw new UnsupportedOperationException();
+        Query query = session.createQuery(SELECT_USER_BY_EMAIL);
+        query.setParameter("email", email);
+        List<User> users = query.list();
+        return users.get(0);
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        Query query = session.createQuery(SELECT_USER_BY_USERNAME);
+        query.setParameter("username", username);
+        List<User> users = query.list();
+        return users.get(0);
     }
 
     public void setSession(Session session) {

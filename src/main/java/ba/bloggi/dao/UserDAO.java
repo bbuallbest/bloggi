@@ -7,4 +7,6 @@ import ba.bloggi.entity.User;
  */
 public interface UserDAO extends GenericDAO<User> {
     User findByEmail(String email);
+
+    User findByUsername(String username);
 }
